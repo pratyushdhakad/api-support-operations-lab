@@ -1,0 +1,13 @@
+api_id,category,name,description,documentation_url,auth_type,https_supported,cors_status,monitoring_eligible,source_line
+art-design-art-institute-of-chicago,Art & Design,Art Institute of Chicago,Public art collection data,https://api.artic.edu/docs/,none,true,yes,true,11
+art-design-metropolitan-museum-of-art,Art & Design,Metropolitan Museum of Art,Metropolitan Museum collection data,https://metmuseum.github.io/,none,true,no,true,12
+transportation-transitland,Transportation,TransitLand,Transit aggregation,https://www.transit.land/documentation/datastore/api-endpoints.html,none,true,unknown,true,18
+transportation-transport-for-belgium,Transportation,Transport for Belgium,Belgian public transport by train,https://docs.irail.be/,none,true,yes,true,19
+transportation-transport-for-london-england,Transportation,"Transport for London, England",London transport data,https://api.tfl.gov.uk,api_key,true,unknown,false,20
+transportation-transport-rest,Transportation,transport.rest,Community-maintained public transport API,https://transport.rest,none,true,yes,true,21
+vehicle-nhtsa,Vehicle,NHTSA,Vehicle product and listing information,https://vpic.nhtsa.dot.gov/api/,none,true,unknown,true,27
+vehicle-problemsbyvin,Vehicle,ProblemsByVin,Vehicle complaints and recall statistics,https://problemsbyvin.com/data/,none,true,yes,true,28
+weather-open-meteo,Weather,Open-Meteo,Global weather forecasts,https://open-meteo.com/,none,true,yes,true,34
+weather-pirate-weather,Weather,Pirate Weather,Weather forecasts compatible with Dark Sky-style clients,https://pirateweather.net/en/latest/,none,true,yes,true,35
+weather-us-weather,Weather,US Weather,United States National Weather Service,https://www.weather.gov/documentation/services-web-api,none,true,yes,true,36
+weather-weatherstack,Weather,Weatherstack,Real-time and historical weather,https://weatherstack.com/,api_key,true,unknown,false,37

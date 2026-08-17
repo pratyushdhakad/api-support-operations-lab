@@ -1,0 +1,14 @@
+{
+  "api_count": 12,
+  "auth_type_counts": {
+    "api_key": 2,
+    "none": 10
+  },
+  "category_counts": {
+    "Art & Design": 2,
+    "Transportation": 4,
+    "Vehicle": 2,
+    "Weather": 4
+  },
+  "monitoring_eligible_count": 10
+}
