@@ -1,0 +1,170 @@
+{
+  "runs": [
+    {
+      "observed_at": "2026-08-17T12:00:00Z",
+      "responses": {
+        "art-design-art-institute-of-chicago": {
+          "content_type": "application/json; charset=utf-8",
+          "latency_ms": 100,
+          "scenario": "healthy_baseline",
+          "status_code": 200
+        },
+        "vehicle-nhtsa": {
+          "content_type": "application/json; charset=utf-8",
+          "latency_ms": 200,
+          "scenario": "healthy_baseline",
+          "status_code": 200
+        },
+        "weather-open-meteo": {
+          "content_type": "application/json",
+          "latency_ms": 90,
+          "scenario": "healthy_baseline",
+          "status_code": 200
+        }
+      },
+      "run_id": "fixture-20260817-1200"
+    },
+    {
+      "observed_at": "2026-08-17T13:00:00Z",
+      "responses": {
+        "art-design-art-institute-of-chicago": {
+          "content_type": "text/html",
+          "latency_ms": 140,
+          "scenario": "schema_drift",
+          "status_code": 200
+        },
+        "vehicle-nhtsa": {
+          "content_type": "application/json",
+          "latency_ms": 240,
+          "scenario": "rate_limiting",
+          "status_code": 429
+        },
+        "weather-open-meteo": {
+          "error_type": "timeout",
+          "latency_ms": 3000,
+          "scenario": "sustained_outage"
+        }
+      },
+      "run_id": "fixture-20260817-1300"
+    },
+    {
+      "observed_at": "2026-08-17T14:00:00Z",
+      "responses": {
+        "art-design-art-institute-of-chicago": {
+          "content_type": "application/json",
+          "latency_ms": 105,
+          "scenario": "healthy_recovery",
+          "status_code": 200
+        },
+        "vehicle-nhtsa": {
+          "content_type": "application/json",
+          "latency_ms": 205,
+          "scenario": "healthy_recovery",
+          "status_code": 200
+        },
+        "weather-open-meteo": {
+          "error_type": "timeout",
+          "latency_ms": 3000,
+          "scenario": "sustained_outage"
+        }
+      },
+      "run_id": "fixture-20260817-1400"
+    },
+    {
+      "observed_at": "2026-08-17T15:00:00Z",
+      "responses": {
+        "art-design-art-institute-of-chicago": {
+          "content_type": "application/json",
+          "latency_ms": 250,
+          "scenario": "intermittent_degradation",
+          "status_code": 200
+        },
+        "vehicle-nhtsa": {
+          "content_type": "application/json",
+          "latency_ms": 210,
+          "scenario": "authentication_failure",
+          "status_code": 401
+        },
+        "weather-open-meteo": {
+          "error_type": "timeout",
+          "latency_ms": 3000,
+          "scenario": "sustained_outage"
+        }
+      },
+      "run_id": "fixture-20260817-1500"
+    },
+    {
+      "observed_at": "2026-08-17T16:00:00Z",
+      "responses": {
+        "art-design-art-institute-of-chicago": {
+          "content_type": "application/json",
+          "latency_ms": 110,
+          "scenario": "healthy_recovery",
+          "status_code": 200
+        },
+        "vehicle-nhtsa": {
+          "content_type": "application/json",
+          "latency_ms": 215,
+          "scenario": "authentication_failure",
+          "status_code": 403
+        },
+        "weather-open-meteo": {
+          "content_type": "application/json",
+          "latency_ms": 95,
+          "scenario": "healthy_recovery",
+          "status_code": 200
+        }
+      },
+      "run_id": "fixture-20260817-1600"
+    },
+    {
+      "observed_at": "2026-08-17T17:00:00Z",
+      "responses": {
+        "art-design-art-institute-of-chicago": {
+          "content_type": "application/json",
+          "latency_ms": 320,
+          "scenario": "intermittent_degradation",
+          "status_code": 200
+        },
+        "vehicle-nhtsa": {
+          "content_type": "application/json",
+          "latency_ms": 200,
+          "scenario": "healthy_recovery",
+          "status_code": 200
+        },
+        "weather-open-meteo": {
+          "content_type": "application/json",
+          "latency_ms": 92,
+          "scenario": "healthy_recovery",
+          "status_code": 200
+        }
+      },
+      "run_id": "fixture-20260817-1700"
+    },
+    {
+      "observed_at": "2026-08-17T18:00:00Z",
+      "responses": {
+        "art-design-art-institute-of-chicago": {
+          "content_type": "application/json",
+          "latency_ms": 108,
+          "scenario": "healthy_recovery",
+          "status_code": 200
+        },
+        "vehicle-nhtsa": {
+          "content_type": "application/json",
+          "latency_ms": 198,
+          "scenario": "healthy_recovery",
+          "status_code": 200
+        },
+        "weather-open-meteo": {
+          "content_type": "application/json",
+          "latency_ms": 90,
+          "scenario": "healthy_recovery",
+          "status_code": 200
+        }
+      },
+      "run_id": "fixture-20260817-1800"
+    }
+  ],
+  "schema_version": 1
+}
