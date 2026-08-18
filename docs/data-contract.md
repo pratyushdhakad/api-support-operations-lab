@@ -24,5 +24,43 @@ Each parsed catalog row becomes one registry record.
 
 ## Day 2 extension
 
-The registry will gain a reviewed monitoring-target layer containing the exact endpoint, method, timeout, expected response contract, and request-policy notes. Catalog metadata alone will never authorize a live request.
+The registry now has a separate reviewed monitoring-target layer containing the exact endpoint, method, timeout, expected response contract, review date, and request-policy notes. Catalog metadata alone never authorizes a live request.
 
+Each health-check result contains:
+
+| Field | Type | Meaning |
+|---|---|---|
+| `run_id` | string | Stable fixture ID or timestamped live-run ID |
+| `observed_at` | ISO 8601 string | When the observation was made |
+| `api_id` | string | Foreign key to the Day 1 registry |
+| `endpoint` | HTTPS URL | Exact reviewed URL that was checked |
+| `status_code` | integer/null | HTTP response status, or null before an HTTP response |
+| `latency_ms` | integer | End-to-end elapsed time, including failed requests |
+| `outcome` | enum | `healthy`, `degraded`, or `unhealthy` |
+| `error_type` | enum/null | Stable operational failure category |
+| `error_detail` | string/null | Sanitized explanation without raw response data |
+
+The monitoring fixture and generated artifact timestamps are fixed inputs. The pipeline does not insert an execution timestamp, so committed outputs remain byte-for-byte reproducible.
+
+## Day 3 extension
+
+The incident engine consumes Day 2 `HealthCheckResult` records without changing their schema. Every incident contains:
+
+| Field | Type | Meaning |
+|---|---|---|
+| `incident_id` | string | Stable hash-derived identity from API, failure type, and first observation |
+| `lifecycle_state` | enum | `open`, `resolved`, or `superseded` |
+| `first_observed_at` / `last_observed_at` | ISO 8601 string | Auditable incident window |
+| `resolved_at` | ISO 8601 string/null | Healthy recovery timestamp, when observed |
+| `failure_type` | enum | Availability, latency, authentication, rate limiting, or schema drift |
+| `api_id` / `affected_api` | string | Registry foreign key and human-readable service name |
+| `evidence` | array | Ordered health observations with endpoint and interpreted signal |
+| `severity` | enum | Peak deterministic priority: `SEV-1`, `SEV-2`, or `SEV-3` |
+| `severity_rule_ids` | string array | Every severity rule matched during the lifecycle |
+| `severity_explanation` | string | Human-readable explanation of peak severity |
+| `business_criticality` / `criticality_basis` | string | Explicit synthetic assumption and its disclaimer |
+| `owner` | string | Configured team accountable for triage |
+| `recommended_action` | string | Failure-specific bounded next action |
+| `consecutive_failure_count` | integer | Maximum uninterrupted observations for the failure type |
+
+Incident ordering, evidence ordering, IDs, JSON keys, CSV columns, and summaries are deterministic. Healthy observations are retained only when they close an active incident; this keeps recovery auditable without creating healthy incidents.
