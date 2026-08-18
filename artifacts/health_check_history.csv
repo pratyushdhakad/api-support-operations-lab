@@ -1,0 +1,22 @@
+run_id,observed_at,api_id,endpoint,status_code,latency_ms,outcome,error_type,error_detail
+fixture-20260817-1200,2026-08-17T12:00:00Z,art-design-art-institute-of-chicago,"https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",200,100,healthy,,
+fixture-20260817-1200,2026-08-17T12:00:00Z,vehicle-nhtsa,https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json,200,200,healthy,,
+fixture-20260817-1200,2026-08-17T12:00:00Z,weather-open-meteo,https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1,200,90,healthy,,
+fixture-20260817-1300,2026-08-17T13:00:00Z,art-design-art-institute-of-chicago,"https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",200,140,degraded,response_contract,content type did not start with application/json
+fixture-20260817-1300,2026-08-17T13:00:00Z,vehicle-nhtsa,https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json,429,240,unhealthy,http_status,HTTP 429 was outside expected statuses [200]
+fixture-20260817-1300,2026-08-17T13:00:00Z,weather-open-meteo,https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1,,3000,unhealthy,timeout,request exceeded its bounded timeout
+fixture-20260817-1400,2026-08-17T14:00:00Z,art-design-art-institute-of-chicago,"https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",200,105,healthy,,
+fixture-20260817-1400,2026-08-17T14:00:00Z,vehicle-nhtsa,https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json,200,205,healthy,,
+fixture-20260817-1400,2026-08-17T14:00:00Z,weather-open-meteo,https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1,,3000,unhealthy,timeout,request exceeded its bounded timeout
+fixture-20260817-1500,2026-08-17T15:00:00Z,art-design-art-institute-of-chicago,"https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",200,250,healthy,,
+fixture-20260817-1500,2026-08-17T15:00:00Z,vehicle-nhtsa,https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json,401,210,unhealthy,http_status,HTTP 401 was outside expected statuses [200]
+fixture-20260817-1500,2026-08-17T15:00:00Z,weather-open-meteo,https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1,,3000,unhealthy,timeout,request exceeded its bounded timeout
+fixture-20260817-1600,2026-08-17T16:00:00Z,art-design-art-institute-of-chicago,"https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",200,110,healthy,,
+fixture-20260817-1600,2026-08-17T16:00:00Z,vehicle-nhtsa,https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json,403,215,unhealthy,http_status,HTTP 403 was outside expected statuses [200]
+fixture-20260817-1600,2026-08-17T16:00:00Z,weather-open-meteo,https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1,200,95,healthy,,
+fixture-20260817-1700,2026-08-17T17:00:00Z,art-design-art-institute-of-chicago,"https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",200,320,healthy,,
+fixture-20260817-1700,2026-08-17T17:00:00Z,vehicle-nhtsa,https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json,200,200,healthy,,
+fixture-20260817-1700,2026-08-17T17:00:00Z,weather-open-meteo,https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1,200,92,healthy,,
+fixture-20260817-1800,2026-08-17T18:00:00Z,art-design-art-institute-of-chicago,"https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",200,108,healthy,,
+fixture-20260817-1800,2026-08-17T18:00:00Z,vehicle-nhtsa,https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json,200,198,healthy,,
+fixture-20260817-1800,2026-08-17T18:00:00Z,weather-open-meteo,https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1,200,90,healthy,,

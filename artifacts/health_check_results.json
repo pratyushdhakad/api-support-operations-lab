@@ -1,0 +1,233 @@
+[
+  {
+    "api_id": "art-design-art-institute-of-chicago",
+    "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 100,
+    "observed_at": "2026-08-17T12:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1200",
+    "status_code": 200
+  },
+  {
+    "api_id": "vehicle-nhtsa",
+    "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 200,
+    "observed_at": "2026-08-17T12:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1200",
+    "status_code": 200
+  },
+  {
+    "api_id": "weather-open-meteo",
+    "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 90,
+    "observed_at": "2026-08-17T12:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1200",
+    "status_code": 200
+  },
+  {
+    "api_id": "art-design-art-institute-of-chicago",
+    "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+    "error_detail": "content type did not start with application/json",
+    "error_type": "response_contract",
+    "latency_ms": 140,
+    "observed_at": "2026-08-17T13:00:00Z",
+    "outcome": "degraded",
+    "run_id": "fixture-20260817-1300",
+    "status_code": 200
+  },
+  {
+    "api_id": "vehicle-nhtsa",
+    "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+    "error_detail": "HTTP 429 was outside expected statuses [200]",
+    "error_type": "http_status",
+    "latency_ms": 240,
+    "observed_at": "2026-08-17T13:00:00Z",
+    "outcome": "unhealthy",
+    "run_id": "fixture-20260817-1300",
+    "status_code": 429
+  },
+  {
+    "api_id": "weather-open-meteo",
+    "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+    "error_detail": "request exceeded its bounded timeout",
+    "error_type": "timeout",
+    "latency_ms": 3000,
+    "observed_at": "2026-08-17T13:00:00Z",
+    "outcome": "unhealthy",
+    "run_id": "fixture-20260817-1300",
+    "status_code": null
+  },
+  {
+    "api_id": "art-design-art-institute-of-chicago",
+    "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 105,
+    "observed_at": "2026-08-17T14:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1400",
+    "status_code": 200
+  },
+  {
+    "api_id": "vehicle-nhtsa",
+    "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 205,
+    "observed_at": "2026-08-17T14:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1400",
+    "status_code": 200
+  },
+  {
+    "api_id": "weather-open-meteo",
+    "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+    "error_detail": "request exceeded its bounded timeout",
+    "error_type": "timeout",
+    "latency_ms": 3000,
+    "observed_at": "2026-08-17T14:00:00Z",
+    "outcome": "unhealthy",
+    "run_id": "fixture-20260817-1400",
+    "status_code": null
+  },
+  {
+    "api_id": "art-design-art-institute-of-chicago",
+    "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 250,
+    "observed_at": "2026-08-17T15:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1500",
+    "status_code": 200
+  },
+  {
+    "api_id": "vehicle-nhtsa",
+    "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+    "error_detail": "HTTP 401 was outside expected statuses [200]",
+    "error_type": "http_status",
+    "latency_ms": 210,
+    "observed_at": "2026-08-17T15:00:00Z",
+    "outcome": "unhealthy",
+    "run_id": "fixture-20260817-1500",
+    "status_code": 401
+  },
+  {
+    "api_id": "weather-open-meteo",
+    "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+    "error_detail": "request exceeded its bounded timeout",
+    "error_type": "timeout",
+    "latency_ms": 3000,
+    "observed_at": "2026-08-17T15:00:00Z",
+    "outcome": "unhealthy",
+    "run_id": "fixture-20260817-1500",
+    "status_code": null
+  },
+  {
+    "api_id": "art-design-art-institute-of-chicago",
+    "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 110,
+    "observed_at": "2026-08-17T16:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1600",
+    "status_code": 200
+  },
+  {
+    "api_id": "vehicle-nhtsa",
+    "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+    "error_detail": "HTTP 403 was outside expected statuses [200]",
+    "error_type": "http_status",
+    "latency_ms": 215,
+    "observed_at": "2026-08-17T16:00:00Z",
+    "outcome": "unhealthy",
+    "run_id": "fixture-20260817-1600",
+    "status_code": 403
+  },
+  {
+    "api_id": "weather-open-meteo",
+    "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 95,
+    "observed_at": "2026-08-17T16:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1600",
+    "status_code": 200
+  },
+  {
+    "api_id": "art-design-art-institute-of-chicago",
+    "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 320,
+    "observed_at": "2026-08-17T17:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1700",
+    "status_code": 200
+  },
+  {
+    "api_id": "vehicle-nhtsa",
+    "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 200,
+    "observed_at": "2026-08-17T17:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1700",
+    "status_code": 200
+  },
+  {
+    "api_id": "weather-open-meteo",
+    "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 92,
+    "observed_at": "2026-08-17T17:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1700",
+    "status_code": 200
+  },
+  {
+    "api_id": "art-design-art-institute-of-chicago",
+    "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 108,
+    "observed_at": "2026-08-17T18:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1800",
+    "status_code": 200
+  },
+  {
+    "api_id": "vehicle-nhtsa",
+    "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 198,
+    "observed_at": "2026-08-17T18:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1800",
+    "status_code": 200
+  },
+  {
+    "api_id": "weather-open-meteo",
+    "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+    "error_detail": null,
+    "error_type": null,
+    "latency_ms": 90,
+    "observed_at": "2026-08-17T18:00:00Z",
+    "outcome": "healthy",
+    "run_id": "fixture-20260817-1800",
+    "status_code": 200
+  }
+]

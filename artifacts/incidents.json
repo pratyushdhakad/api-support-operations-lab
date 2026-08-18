@@ -1,0 +1,303 @@
+[
+  {
+    "affected_api": "Art Institute of Chicago",
+    "api_id": "art-design-art-institute-of-chicago",
+    "business_criticality": "medium",
+    "consecutive_failure_count": 1,
+    "criticality_basis": "Synthetic portfolio assumption for rule testing; not a claim about provider or user impact.",
+    "evidence": [
+      {
+        "detail": "response contract no longer matched the reviewed content type",
+        "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+        "error_type": "response_contract",
+        "latency_ms": 140,
+        "observed_at": "2026-08-17T13:00:00Z",
+        "outcome": "degraded",
+        "run_id": "fixture-20260817-1300",
+        "signal": "schema_drift",
+        "status_code": 200
+      },
+      {
+        "detail": "healthy observation met availability, contract, and latency rules",
+        "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+        "error_type": null,
+        "latency_ms": 105,
+        "observed_at": "2026-08-17T14:00:00Z",
+        "outcome": "healthy",
+        "run_id": "fixture-20260817-1400",
+        "signal": "healthy_recovery",
+        "status_code": 200
+      }
+    ],
+    "failure_type": "schema_drift",
+    "first_observed_at": "2026-08-17T13:00:00Z",
+    "incident_id": "inc-bb98d361bb2a",
+    "last_observed_at": "2026-08-17T14:00:00Z",
+    "lifecycle_state": "resolved",
+    "owner": "Integration Support",
+    "recommended_action": "Compare the observed contract signal with provider documentation and update the adapter only after confirming the intended response shape.",
+    "resolved_at": "2026-08-17T14:00:00Z",
+    "severity": "SEV-3",
+    "severity_explanation": "SEV-3: the reviewed response contract changed.",
+    "severity_rule_ids": [
+      "SCHEMA_DRIFT_SEV3"
+    ]
+  },
+  {
+    "affected_api": "NHTSA vPIC",
+    "api_id": "vehicle-nhtsa",
+    "business_criticality": "high",
+    "consecutive_failure_count": 1,
+    "criticality_basis": "Synthetic portfolio assumption for rule testing; not a claim about provider or user impact.",
+    "evidence": [
+      {
+        "detail": "HTTP 429 is a rate-limit signal",
+        "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+        "error_type": "http_status",
+        "latency_ms": 240,
+        "observed_at": "2026-08-17T13:00:00Z",
+        "outcome": "unhealthy",
+        "run_id": "fixture-20260817-1300",
+        "signal": "rate_limiting",
+        "status_code": 429
+      },
+      {
+        "detail": "healthy observation met availability, contract, and latency rules",
+        "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+        "error_type": null,
+        "latency_ms": 205,
+        "observed_at": "2026-08-17T14:00:00Z",
+        "outcome": "healthy",
+        "run_id": "fixture-20260817-1400",
+        "signal": "healthy_recovery",
+        "status_code": 200
+      }
+    ],
+    "failure_type": "rate_limiting",
+    "first_observed_at": "2026-08-17T13:00:00Z",
+    "incident_id": "inc-138016fb6d5e",
+    "last_observed_at": "2026-08-17T14:00:00Z",
+    "lifecycle_state": "resolved",
+    "owner": "API Operations",
+    "recommended_action": "Pause nonessential requests, review documented limits and request cadence, and add bounded backoff only after policy review.",
+    "resolved_at": "2026-08-17T14:00:00Z",
+    "severity": "SEV-1",
+    "severity_explanation": "SEV-1: HTTP status indicated rate limiting; configured synthetic criticality escalated one level.",
+    "severity_rule_ids": [
+      "RATE_LIMIT_SIGNAL_SEV2",
+      "HIGH_CRITICALITY_ESCALATION"
+    ]
+  },
+  {
+    "affected_api": "Open-Meteo",
+    "api_id": "weather-open-meteo",
+    "business_criticality": "medium",
+    "consecutive_failure_count": 3,
+    "criticality_basis": "Synthetic portfolio assumption for rule testing; not a claim about provider or user impact.",
+    "evidence": [
+      {
+        "detail": "health check was unavailable: timeout",
+        "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+        "error_type": "timeout",
+        "latency_ms": 3000,
+        "observed_at": "2026-08-17T13:00:00Z",
+        "outcome": "unhealthy",
+        "run_id": "fixture-20260817-1300",
+        "signal": "availability",
+        "status_code": null
+      },
+      {
+        "detail": "health check was unavailable: timeout",
+        "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+        "error_type": "timeout",
+        "latency_ms": 3000,
+        "observed_at": "2026-08-17T14:00:00Z",
+        "outcome": "unhealthy",
+        "run_id": "fixture-20260817-1400",
+        "signal": "availability",
+        "status_code": null
+      },
+      {
+        "detail": "health check was unavailable: timeout",
+        "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+        "error_type": "timeout",
+        "latency_ms": 3000,
+        "observed_at": "2026-08-17T15:00:00Z",
+        "outcome": "unhealthy",
+        "run_id": "fixture-20260817-1500",
+        "signal": "availability",
+        "status_code": null
+      },
+      {
+        "detail": "healthy observation met availability, contract, and latency rules",
+        "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+        "error_type": null,
+        "latency_ms": 95,
+        "observed_at": "2026-08-17T16:00:00Z",
+        "outcome": "healthy",
+        "run_id": "fixture-20260817-1600",
+        "signal": "healthy_recovery",
+        "status_code": 200
+      }
+    ],
+    "failure_type": "availability",
+    "first_observed_at": "2026-08-17T13:00:00Z",
+    "incident_id": "inc-47d92a9f4661",
+    "last_observed_at": "2026-08-17T16:00:00Z",
+    "lifecycle_state": "resolved",
+    "owner": "API Operations",
+    "recommended_action": "Verify provider status and local connectivity, preserve evidence, and escalate to the owner if failures persist; do not add automatic retries during an outage.",
+    "resolved_at": "2026-08-17T16:00:00Z",
+    "severity": "SEV-1",
+    "severity_explanation": "SEV-1: availability failed for 3 consecutive observations.",
+    "severity_rule_ids": [
+      "AVAILABILITY_SINGLE_SEV3",
+      "AVAILABILITY_REPEATED_SEV2",
+      "AVAILABILITY_SUSTAINED_SEV1"
+    ]
+  },
+  {
+    "affected_api": "Art Institute of Chicago",
+    "api_id": "art-design-art-institute-of-chicago",
+    "business_criticality": "medium",
+    "consecutive_failure_count": 1,
+    "criticality_basis": "Synthetic portfolio assumption for rule testing; not a claim about provider or user impact.",
+    "evidence": [
+      {
+        "detail": "latency was 2.50x the configured baseline",
+        "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+        "error_type": null,
+        "latency_ms": 250,
+        "observed_at": "2026-08-17T15:00:00Z",
+        "outcome": "healthy",
+        "run_id": "fixture-20260817-1500",
+        "signal": "latency_degradation",
+        "status_code": 200
+      },
+      {
+        "detail": "healthy observation met availability, contract, and latency rules",
+        "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+        "error_type": null,
+        "latency_ms": 110,
+        "observed_at": "2026-08-17T16:00:00Z",
+        "outcome": "healthy",
+        "run_id": "fixture-20260817-1600",
+        "signal": "healthy_recovery",
+        "status_code": 200
+      }
+    ],
+    "failure_type": "latency_degradation",
+    "first_observed_at": "2026-08-17T15:00:00Z",
+    "incident_id": "inc-bf6c203a3aa0",
+    "last_observed_at": "2026-08-17T16:00:00Z",
+    "lifecycle_state": "resolved",
+    "owner": "Integration Support",
+    "recommended_action": "Review the latency trend and dependency path, continue bounded monitoring, and avoid claiming an SLA breach from synthetic observations.",
+    "resolved_at": "2026-08-17T16:00:00Z",
+    "severity": "SEV-3",
+    "severity_explanation": "SEV-3: latency was 2.50x the configured baseline.",
+    "severity_rule_ids": [
+      "LATENCY_DEGRADED_SEV3"
+    ]
+  },
+  {
+    "affected_api": "NHTSA vPIC",
+    "api_id": "vehicle-nhtsa",
+    "business_criticality": "high",
+    "consecutive_failure_count": 2,
+    "criticality_basis": "Synthetic portfolio assumption for rule testing; not a claim about provider or user impact.",
+    "evidence": [
+      {
+        "detail": "HTTP 401 is an authentication signal",
+        "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+        "error_type": "http_status",
+        "latency_ms": 210,
+        "observed_at": "2026-08-17T15:00:00Z",
+        "outcome": "unhealthy",
+        "run_id": "fixture-20260817-1500",
+        "signal": "authentication_failure",
+        "status_code": 401
+      },
+      {
+        "detail": "HTTP 403 is an authentication signal",
+        "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+        "error_type": "http_status",
+        "latency_ms": 215,
+        "observed_at": "2026-08-17T16:00:00Z",
+        "outcome": "unhealthy",
+        "run_id": "fixture-20260817-1600",
+        "signal": "authentication_failure",
+        "status_code": 403
+      },
+      {
+        "detail": "healthy observation met availability, contract, and latency rules",
+        "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+        "error_type": null,
+        "latency_ms": 200,
+        "observed_at": "2026-08-17T17:00:00Z",
+        "outcome": "healthy",
+        "run_id": "fixture-20260817-1700",
+        "signal": "healthy_recovery",
+        "status_code": 200
+      }
+    ],
+    "failure_type": "authentication_failure",
+    "first_observed_at": "2026-08-17T15:00:00Z",
+    "incident_id": "inc-e9b091b27b28",
+    "last_observed_at": "2026-08-17T17:00:00Z",
+    "lifecycle_state": "resolved",
+    "owner": "API Operations",
+    "recommended_action": "Validate credential and authorization configuration without recording secrets, then review provider authentication documentation before retrying.",
+    "resolved_at": "2026-08-17T17:00:00Z",
+    "severity": "SEV-1",
+    "severity_explanation": "SEV-1: HTTP status indicated authentication failure; configured synthetic criticality escalated one level.",
+    "severity_rule_ids": [
+      "AUTHENTICATION_SIGNAL_SEV2",
+      "HIGH_CRITICALITY_ESCALATION"
+    ]
+  },
+  {
+    "affected_api": "Art Institute of Chicago",
+    "api_id": "art-design-art-institute-of-chicago",
+    "business_criticality": "medium",
+    "consecutive_failure_count": 1,
+    "criticality_basis": "Synthetic portfolio assumption for rule testing; not a claim about provider or user impact.",
+    "evidence": [
+      {
+        "detail": "latency was 3.20x the configured baseline",
+        "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+        "error_type": null,
+        "latency_ms": 320,
+        "observed_at": "2026-08-17T17:00:00Z",
+        "outcome": "healthy",
+        "run_id": "fixture-20260817-1700",
+        "signal": "latency_degradation",
+        "status_code": 200
+      },
+      {
+        "detail": "healthy observation met availability, contract, and latency rules",
+        "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+        "error_type": null,
+        "latency_ms": 108,
+        "observed_at": "2026-08-17T18:00:00Z",
+        "outcome": "healthy",
+        "run_id": "fixture-20260817-1800",
+        "signal": "healthy_recovery",
+        "status_code": 200
+      }
+    ],
+    "failure_type": "latency_degradation",
+    "first_observed_at": "2026-08-17T17:00:00Z",
+    "incident_id": "inc-90ddadc5e2a3",
+    "last_observed_at": "2026-08-17T18:00:00Z",
+    "lifecycle_state": "resolved",
+    "owner": "Integration Support",
+    "recommended_action": "Review the latency trend and dependency path, continue bounded monitoring, and avoid claiming an SLA breach from synthetic observations.",
+    "resolved_at": "2026-08-17T18:00:00Z",
+    "severity": "SEV-2",
+    "severity_explanation": "SEV-2: latency was 3.20x the configured baseline.",
+    "severity_rule_ids": [
+      "LATENCY_SEVERE_SEV2"
+    ]
+  }
+]
