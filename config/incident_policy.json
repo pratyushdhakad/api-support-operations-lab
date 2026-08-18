@@ -1,0 +1,44 @@
+{
+  "policy": {
+    "authentication_statuses": [
+      401,
+      403
+    ],
+    "availability_sev1_consecutive_failures": 3,
+    "availability_sev2_consecutive_failures": 2,
+    "high_criticality_escalates_one_level": true,
+    "latency_degradation_multiplier": 2.0,
+    "minimum_latency_degradation_ms": 200,
+    "rate_limit_statuses": [
+      429
+    ],
+    "severe_latency_multiplier": 3.0
+  },
+  "schema_version": 1,
+  "services": [
+    {
+      "api_id": "art-design-art-institute-of-chicago",
+      "baseline_latency_ms": 100,
+      "business_criticality": "medium",
+      "criticality_basis": "Synthetic portfolio assumption for rule testing; not a claim about provider or user impact.",
+      "name": "Art Institute of Chicago",
+      "owner": "Integration Support"
+    },
+    {
+      "api_id": "vehicle-nhtsa",
+      "baseline_latency_ms": 200,
+      "business_criticality": "high",
+      "criticality_basis": "Synthetic portfolio assumption for rule testing; not a claim about provider or user impact.",
+      "name": "NHTSA vPIC",
+      "owner": "API Operations"
+    },
+    {
+      "api_id": "weather-open-meteo",
+      "baseline_latency_ms": 100,
+      "business_criticality": "medium",
+      "criticality_basis": "Synthetic portfolio assumption for rule testing; not a claim about provider or user impact.",
+      "name": "Open-Meteo",
+      "owner": "API Operations"
+    }
+  ]
+}

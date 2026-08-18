@@ -1,0 +1,78 @@
+{
+  "policy": {
+    "catalog_inclusion_authorizes_requests": false,
+    "default_timeout_seconds": 3.0,
+    "max_targets_per_run": 3,
+    "maximum_timeout_seconds": 5.0,
+    "minimum_interval_minutes": 60,
+    "notes": [
+      "Only explicitly reviewed targets in this file may be requested.",
+      "Run no more than once per hour and stop if a provider asks the project to stop.",
+      "Use deterministic fixtures for tests and portfolio artifacts; live checks require an explicit CLI flag."
+    ],
+    "user_agent": "api-support-operations-lab/0.2 (+https://github.com/pratyushdhakad/api-support-operations-lab; contact: GitHub @pratyushdhakad)"
+  },
+  "schema_version": 1,
+  "targets": [
+    {
+      "api_id": "art-design-art-institute-of-chicago",
+      "documentation_url": "https://api.artic.edu/docs/",
+      "endpoint": "https://api.artic.edu/api/v1/artworks?limit=1&fields=id,title",
+      "expected_content_type": "application/json",
+      "expected_statuses": [
+        200
+      ],
+      "live_monitoring_enabled": true,
+      "method": "GET",
+      "name": "Art Institute of Chicago",
+      "policy_notes": [
+        "The provider documents GET /artworks as a public collection endpoint.",
+        "limit=1 and fields=id,title minimize response size and provider work.",
+        "This internal review is not provider-granted authorization."
+      ],
+      "policy_review_status": "reviewed",
+      "reviewed_on": "2026-08-17",
+      "timeout_seconds": 3.0
+    },
+    {
+      "api_id": "vehicle-nhtsa",
+      "documentation_url": "https://vpic.nhtsa.dot.gov/api/",
+      "endpoint": "https://vpic.nhtsa.dot.gov/api/vehicles/GetManufacturerDetails/988?format=json",
+      "expected_content_type": "application/json",
+      "expected_statuses": [
+        200
+      ],
+      "live_monitoring_enabled": true,
+      "method": "GET",
+      "name": "NHTSA vPIC",
+      "policy_notes": [
+        "The provider documents this public GET endpoint and JSON format parameter.",
+        "A numeric manufacturer identifier produces an exact, bounded lookup.",
+        "vPIC publishes quotas; this project permits at most one request per scheduled run."
+      ],
+      "policy_review_status": "reviewed",
+      "reviewed_on": "2026-08-17",
+      "timeout_seconds": 4.0
+    },
+    {
+      "api_id": "weather-open-meteo",
+      "documentation_url": "https://open-meteo.com/en/docs",
+      "endpoint": "https://api.open-meteo.com/v1/forecast?latitude=41.8781&longitude=-87.6298&current=temperature_2m&forecast_days=1",
+      "expected_content_type": "application/json",
+      "expected_statuses": [
+        200
+      ],
+      "live_monitoring_enabled": true,
+      "method": "GET",
+      "name": "Open-Meteo",
+      "policy_notes": [
+        "The free endpoint is documented for non-commercial use below its published daily limit.",
+        "One coordinate, one current variable, and one forecast day bound response work.",
+        "Commercial use would require a separate license review and configuration."
+      ],
+      "policy_review_status": "reviewed",
+      "reviewed_on": "2026-08-17",
+      "timeout_seconds": 3.0
+    }
+  ]
+}
