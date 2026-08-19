@@ -1,0 +1,18 @@
+{
+  "allowed_owners": [
+    "API Operations",
+    "Integration Support"
+  ],
+  "classifier_version": "deterministic-baseline-1.0.0",
+  "modeled_pricing": {
+    "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+    "currency": "USD",
+    "input_usd_per_million_tokens": "0.15",
+    "name": "illustrative-low-cost-model-2026-08",
+    "output_usd_per_million_tokens": "0.60"
+  },
+  "modeled_prompt_tokens": 58,
+  "operating_confidence_threshold": 0.85,
+  "prompt_version": "incident-triage-v1",
+  "schema_version": 1
+}
