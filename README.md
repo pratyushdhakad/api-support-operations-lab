@@ -10,7 +10,7 @@ Which external APIs are suitable for monitored workflows, and how should an oper
 
 The eventual decision owner is an automation or data-platform lead responsible for choosing dependencies and responding when an upstream service becomes unreliable.
 
-## Day 3 build status
+## Day 4 build status
 
 The repository currently:
 
@@ -24,8 +24,12 @@ The repository currently:
 - preserves latency history across deterministic mock runs;
 - converts health observations into stable, auditable incident lifecycles;
 - applies explainable severity rules for availability, consecutive failures, latency, authentication, rate limits, response contracts, and configured criticality;
-- records evidence, ownership, recovery, and bounded recommended actions; and
-- tests parsing, policy enforcement, failure isolation, incident scenarios, and byte-for-byte reproducibility.
+- records evidence, ownership, recovery, and bounded recommended actions;
+- exposes a provider-agnostic incident classifier with an offline deterministic baseline;
+- classifies failure category, priority, summary, owner, confidence, and review state;
+- evaluates accuracy, macro F1, per-class behavior, threshold coverage, abstention, and latency;
+- records prompt/version provenance and explicitly modeled token/cost usage; and
+- tests parsing, policy enforcement, failure isolation, incident scenarios, AI review behavior, and byte-for-byte reproducibility.
 
 Tests, `make run`, and committed artifacts never call external endpoints. The live mode is opt-in and makes at most one request to each of three reviewed targets.
 
@@ -50,7 +54,10 @@ Generated outputs are written to `artifacts/`:
 - `monitoring_summary.json` — operational outcome and error counts;
 - `incident_timeline.csv` — analyst-friendly incident lifecycle and triage fields;
 - `incidents.json` — complete incident identity, evidence, severity, ownership, and action records; and
-- `incident_summary.json` — lifecycle, failure-type, and peak-severity counts.
+- `incident_summary.json` — lifecycle, failure-type, and peak-severity counts;
+- `incident_classifications.json` — Day 4 classifications, review states, metadata, and per-record modeled usage;
+- `classification_evaluation.json` — labeled-fixture metrics, threshold analysis, per-class performance, and latency buckets; and
+- `classification_cost_summary.json` — illustrative modeled pricing and aggregate usage, never realized spend or savings.
 
 Run the complete deterministic pipeline with:
 
@@ -81,6 +88,8 @@ flowchart LR
     G --> H[Latency history and failure taxonomy]
     H --> I[Deterministic incident engine]
     I --> J[Auditable severity and recovery timeline]
+    J --> K[Provider-agnostic classifier]
+    K --> L[Evaluation, abstention, and modeled cost evidence]
 ```
 
 ## Five-day roadmap
@@ -88,18 +97,18 @@ flowchart LR
 1. **Catalog foundation:** parser, registry, deterministic fixtures, tests
 2. **Health monitoring:** latency history, failure handling, controlled endpoint probes — complete
 3. **Incident operations:** incident model, severity rules, automated tests — complete
-4. **AI evaluation:** failure classification, evaluation harness, cost tracking
+4. **AI evaluation:** failure classification, evaluation harness, cost tracking — complete
 5. **Decision experience:** executive dashboard, CI, GitHub Pages deployment
 
 ## Repository map
 
 ```text
-src/api_support_operations/  catalog, monitoring, incident engines, and artifact pipelines
-config/                      reviewed monitoring allowlist and explicit incident policy
-data/                        attributed catalog and deterministic operational fixtures
-tests/                       policy, resilience, incident, parser, and reproducibility tests
-artifacts/                   generated registry, monitoring, and incident outputs
-docs/                        data contracts and operating assumptions
+src/api_support_operations/  catalog, monitoring, incident, classification, evaluation, and artifact pipelines
+config/                      reviewed monitoring, incident, confidence, ownership, and modeled-pricing policies
+data/                        attributed catalog plus deterministic operational and labeled evaluation fixtures
+tests/                       policy, resilience, incident, classifier, metric, parser, and reproducibility tests
+artifacts/                   generated registry, monitoring, incident, classification, and evaluation outputs
+docs/                        data contracts, operating assumptions, review policy, and failure modes
 ```
 
 ## Responsible-use guardrails
@@ -110,6 +119,8 @@ docs/                        data contracts and operating assumptions
 - Catalog presence and computed eligibility are discovery signals, never authorization to make a request.
 - Tests and portfolio artifacts use deterministic transport fixtures and cannot touch the network.
 - Business criticality, latency baselines, and ownership are labeled synthetic portfolio assumptions, not observed customer impact.
+- Day 4 evaluation labels are synthetic; the baseline needs no secret, paid API, or network access.
+- Token and cost values are deterministic models under illustrative rates, not invoices or realized savings.
 - No employer, customer, credential, or private operational data belongs in this repository.
 
 ## Current limitations
@@ -119,7 +130,11 @@ docs/                        data contracts and operating assumptions
 - The engine records point-in-time reachability and contract health, not provider uptime or SLA compliance.
 - The fixture history is synthetic and must not be presented as observed provider performance.
 - Severity is a deterministic triage priority for this exercise, not a claim about customer, revenue, or provider-wide impact.
+- The Day 4 rules baseline evaluates the interface, structured signal handling, routing, and abstention policy; it is not evidence of general language-model quality.
+- The small balanced fixture set is a regression suite, not a production-representative sample. Latency is a coarse local measurement, not an SLA.
 - CORS is retained as metadata but does not determine server-side monitoring eligibility.
+
+See [AI-assisted classification and evaluation](docs/ai-evaluation.md) for metric definitions, threshold tradeoffs, failure modes, human review, prompt metadata, and modeled-cost assumptions.
 
 ## License
 
