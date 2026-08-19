@@ -1,0 +1,281 @@
+{
+  "evaluation_contract": {
+    "category_metrics_scope": "Known operational categories only; unknown labels test abstention behavior.",
+    "fixture_type": "committed synthetic labeled cases",
+    "latency_reporting": "Observed local wall-clock classifier duration, bucketed for reproducible artifacts; not a service-level claim."
+  },
+  "field_accuracy": {
+    "failure_category": 1.0,
+    "priority": 1.0,
+    "recommended_owner": 1.0,
+    "review_state": 1.0,
+    "summary": 1.0
+  },
+  "fixture_case_count": 12,
+  "latency": {
+    "measurement": "observed_local_wall_clock",
+    "p50_bucket": "<1 ms",
+    "p95_bucket": "<1 ms",
+    "reporting": "bucketed_for_reproducibility",
+    "sample_count": 12
+  },
+  "modeled_usage_and_cost": {
+    "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+    "currency": "USD",
+    "modeled_input_tokens": 1423,
+    "modeled_output_tokens": 606,
+    "modeled_total_cost_usd": "0.00057705",
+    "realized_cost_or_savings_claimed": false,
+    "request_count": 12
+  },
+  "operating_confidence_threshold": 0.85,
+  "operating_point": {
+    "abstention_rate": 0.0909,
+    "accuracy_on_answered": 1.0,
+    "answered_count": 10,
+    "coverage": 0.9091,
+    "macro_f1_with_abstentions_as_false_negatives": 0.96,
+    "overall_accuracy_with_abstentions_as_incorrect": 0.9091,
+    "per_class": {
+      "authentication_failure": {
+        "answered": 2,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 2
+      },
+      "availability": {
+        "answered": 2,
+        "f1": 0.8,
+        "precision": 1.0,
+        "recall": 0.6667,
+        "support": 3
+      },
+      "latency_degradation": {
+        "answered": 2,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 2
+      },
+      "rate_limiting": {
+        "answered": 2,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 2
+      },
+      "schema_drift": {
+        "answered": 2,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 2
+      }
+    },
+    "scorable_count": 11,
+    "threshold": 0.85
+  },
+  "prompt_metadata": {
+    "classifier_version": "deterministic-baseline-1.0.0",
+    "external_api_called": false,
+    "model": "structured-rules",
+    "prompt_template_sha256": "36a542b05c28baa3ea6400c9fd272c86a1da0b4e174933e0c5c6632a6ae7eb07",
+    "prompt_version": "incident-triage-v1",
+    "provider": "deterministic-baseline"
+  },
+  "review_state_counts": {
+    "auto_classified": 10,
+    "human_review_required": 2
+  },
+  "threshold_analysis": [
+    {
+      "abstention_rate": 0.0,
+      "accuracy_on_answered": 1.0,
+      "answered_count": 11,
+      "coverage": 1.0,
+      "macro_f1_with_abstentions_as_false_negatives": 1.0,
+      "overall_accuracy_with_abstentions_as_incorrect": 1.0,
+      "per_class": {
+        "authentication_failure": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "availability": {
+          "answered": 3,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 3
+        },
+        "latency_degradation": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "rate_limiting": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "schema_drift": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        }
+      },
+      "scorable_count": 11,
+      "threshold": 0.0
+    },
+    {
+      "abstention_rate": 0.0,
+      "accuracy_on_answered": 1.0,
+      "answered_count": 11,
+      "coverage": 1.0,
+      "macro_f1_with_abstentions_as_false_negatives": 1.0,
+      "overall_accuracy_with_abstentions_as_incorrect": 1.0,
+      "per_class": {
+        "authentication_failure": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "availability": {
+          "answered": 3,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 3
+        },
+        "latency_degradation": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "rate_limiting": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "schema_drift": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        }
+      },
+      "scorable_count": 11,
+      "threshold": 0.7
+    },
+    {
+      "abstention_rate": 0.0909,
+      "accuracy_on_answered": 1.0,
+      "answered_count": 10,
+      "coverage": 0.9091,
+      "macro_f1_with_abstentions_as_false_negatives": 0.96,
+      "overall_accuracy_with_abstentions_as_incorrect": 0.9091,
+      "per_class": {
+        "authentication_failure": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "availability": {
+          "answered": 2,
+          "f1": 0.8,
+          "precision": 1.0,
+          "recall": 0.6667,
+          "support": 3
+        },
+        "latency_degradation": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "rate_limiting": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "schema_drift": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        }
+      },
+      "scorable_count": 11,
+      "threshold": 0.85
+    },
+    {
+      "abstention_rate": 0.2727,
+      "accuracy_on_answered": 1.0,
+      "answered_count": 8,
+      "coverage": 0.7273,
+      "macro_f1_with_abstentions_as_false_negatives": 0.76,
+      "overall_accuracy_with_abstentions_as_incorrect": 0.7273,
+      "per_class": {
+        "authentication_failure": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "availability": {
+          "answered": 2,
+          "f1": 0.8,
+          "precision": 1.0,
+          "recall": 0.6667,
+          "support": 3
+        },
+        "latency_degradation": {
+          "answered": 0,
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 2
+        },
+        "rate_limiting": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "schema_drift": {
+          "answered": 2,
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        }
+      },
+      "scorable_count": 11,
+      "threshold": 0.95
+    }
+  ]
+}

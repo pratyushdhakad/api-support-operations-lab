@@ -1,0 +1,164 @@
+[
+  {
+    "abstention_reason": null,
+    "confidence": 0.98,
+    "failure_category": "schema_drift",
+    "incident_id": "inc-bb98d361bb2a",
+    "modeled_usage": {
+      "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+      "currency": "USD",
+      "input_cost_usd": "0.00001860",
+      "input_tokens": 124,
+      "output_cost_usd": "0.00003240",
+      "output_tokens": 54,
+      "total_cost_usd": "0.00005100"
+    },
+    "priority": "SEV-3",
+    "prompt_metadata": {
+      "classifier_version": "deterministic-baseline-1.0.0",
+      "external_api_called": false,
+      "model": "structured-rules",
+      "prompt_template_sha256": "36a542b05c28baa3ea6400c9fd272c86a1da0b4e174933e0c5c6632a6ae7eb07",
+      "prompt_version": "incident-triage-v1",
+      "provider": "deterministic-baseline"
+    },
+    "recommended_owner": "Integration Support",
+    "review_state": "auto_classified",
+    "summary": "Art Institute of Chicago: the reviewed response contract changed (SEV-3)."
+  },
+  {
+    "abstention_reason": null,
+    "confidence": 0.99,
+    "failure_category": "rate_limiting",
+    "incident_id": "inc-138016fb6d5e",
+    "modeled_usage": {
+      "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+      "currency": "USD",
+      "input_cost_usd": "0.00001770",
+      "input_tokens": 118,
+      "output_cost_usd": "0.00002760",
+      "output_tokens": 46,
+      "total_cost_usd": "0.00004530"
+    },
+    "priority": "SEV-1",
+    "prompt_metadata": {
+      "classifier_version": "deterministic-baseline-1.0.0",
+      "external_api_called": false,
+      "model": "structured-rules",
+      "prompt_template_sha256": "36a542b05c28baa3ea6400c9fd272c86a1da0b4e174933e0c5c6632a6ae7eb07",
+      "prompt_version": "incident-triage-v1",
+      "provider": "deterministic-baseline"
+    },
+    "recommended_owner": "API Operations",
+    "review_state": "auto_classified",
+    "summary": "NHTSA vPIC: request rate was limited (SEV-1)."
+  },
+  {
+    "abstention_reason": null,
+    "confidence": 0.95,
+    "failure_category": "availability",
+    "incident_id": "inc-47d92a9f4661",
+    "modeled_usage": {
+      "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+      "currency": "USD",
+      "input_cost_usd": "0.00001755",
+      "input_tokens": 117,
+      "output_cost_usd": "0.00002700",
+      "output_tokens": 45,
+      "total_cost_usd": "0.00004455"
+    },
+    "priority": "SEV-1",
+    "prompt_metadata": {
+      "classifier_version": "deterministic-baseline-1.0.0",
+      "external_api_called": false,
+      "model": "structured-rules",
+      "prompt_template_sha256": "36a542b05c28baa3ea6400c9fd272c86a1da0b4e174933e0c5c6632a6ae7eb07",
+      "prompt_version": "incident-triage-v1",
+      "provider": "deterministic-baseline"
+    },
+    "recommended_owner": "API Operations",
+    "review_state": "auto_classified",
+    "summary": "Open-Meteo: availability failed (SEV-1)."
+  },
+  {
+    "abstention_reason": null,
+    "confidence": 0.91,
+    "failure_category": "latency_degradation",
+    "incident_id": "inc-bf6c203a3aa0",
+    "modeled_usage": {
+      "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+      "currency": "USD",
+      "input_cost_usd": "0.00001815",
+      "input_tokens": 121,
+      "output_cost_usd": "0.00003360",
+      "output_tokens": 56,
+      "total_cost_usd": "0.00005175"
+    },
+    "priority": "SEV-3",
+    "prompt_metadata": {
+      "classifier_version": "deterministic-baseline-1.0.0",
+      "external_api_called": false,
+      "model": "structured-rules",
+      "prompt_template_sha256": "36a542b05c28baa3ea6400c9fd272c86a1da0b4e174933e0c5c6632a6ae7eb07",
+      "prompt_version": "incident-triage-v1",
+      "provider": "deterministic-baseline"
+    },
+    "recommended_owner": "Integration Support",
+    "review_state": "auto_classified",
+    "summary": "Art Institute of Chicago: latency exceeded the reviewed baseline (SEV-3)."
+  },
+  {
+    "abstention_reason": null,
+    "confidence": 0.99,
+    "failure_category": "authentication_failure",
+    "incident_id": "inc-e9b091b27b28",
+    "modeled_usage": {
+      "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+      "currency": "USD",
+      "input_cost_usd": "0.00001800",
+      "input_tokens": 120,
+      "output_cost_usd": "0.00002880",
+      "output_tokens": 48,
+      "total_cost_usd": "0.00004680"
+    },
+    "priority": "SEV-1",
+    "prompt_metadata": {
+      "classifier_version": "deterministic-baseline-1.0.0",
+      "external_api_called": false,
+      "model": "structured-rules",
+      "prompt_template_sha256": "36a542b05c28baa3ea6400c9fd272c86a1da0b4e174933e0c5c6632a6ae7eb07",
+      "prompt_version": "incident-triage-v1",
+      "provider": "deterministic-baseline"
+    },
+    "recommended_owner": "API Operations",
+    "review_state": "auto_classified",
+    "summary": "NHTSA vPIC: authentication failed (SEV-1)."
+  },
+  {
+    "abstention_reason": null,
+    "confidence": 0.91,
+    "failure_category": "latency_degradation",
+    "incident_id": "inc-90ddadc5e2a3",
+    "modeled_usage": {
+      "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+      "currency": "USD",
+      "input_cost_usd": "0.00001815",
+      "input_tokens": 121,
+      "output_cost_usd": "0.00003360",
+      "output_tokens": 56,
+      "total_cost_usd": "0.00005175"
+    },
+    "priority": "SEV-2",
+    "prompt_metadata": {
+      "classifier_version": "deterministic-baseline-1.0.0",
+      "external_api_called": false,
+      "model": "structured-rules",
+      "prompt_template_sha256": "36a542b05c28baa3ea6400c9fd272c86a1da0b4e174933e0c5c6632a6ae7eb07",
+      "prompt_version": "incident-triage-v1",
+      "provider": "deterministic-baseline"
+    },
+    "recommended_owner": "Integration Support",
+    "review_state": "auto_classified",
+    "summary": "Art Institute of Chicago: latency exceeded the reviewed baseline (SEV-2)."
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "modeled_pricing": {
+    "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+    "currency": "USD",
+    "input_usd_per_million_tokens": "0.15",
+    "name": "illustrative-low-cost-model-2026-08",
+    "output_usd_per_million_tokens": "0.60"
+  },
+  "scope": "Committed synthetic Day 3 incidents classified by the offline baseline.",
+  "usage": {
+    "basis": "Modeled only from deterministic token estimates and illustrative unit prices; no provider API was called and no realized cost or savings is claimed.",
+    "currency": "USD",
+    "modeled_input_tokens": 721,
+    "modeled_output_tokens": 305,
+    "modeled_total_cost_usd": "0.00029115",
+    "realized_cost_or_savings_claimed": false,
+    "request_count": 6
+  }
+}
