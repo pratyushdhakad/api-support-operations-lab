@@ -1,0 +1,246 @@
+{
+  "cases": [
+    {
+      "expected": {
+        "failure_category": "authentication_failure",
+        "priority": "SEV-2",
+        "recommended_owner": "API Operations",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Maps: authentication failed (SEV-2)."
+      },
+      "input": {
+        "affected_api": "Synthetic Maps",
+        "detector_signal": null,
+        "error_type": "http_status",
+        "incident_id": "eval-auth-401",
+        "latency_ratio": null,
+        "outcome": "unhealthy",
+        "owner_hint": "API Operations",
+        "priority_hint": "SEV-2",
+        "status_code": 401
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "authentication_failure",
+        "priority": "SEV-1",
+        "recommended_owner": "Integration Support",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Identity: authentication failed (SEV-1)."
+      },
+      "input": {
+        "affected_api": "Synthetic Identity",
+        "detector_signal": "authentication_failure",
+        "error_type": "http_status",
+        "incident_id": "eval-auth-403",
+        "latency_ratio": null,
+        "outcome": "unhealthy",
+        "owner_hint": "Integration Support",
+        "priority_hint": "SEV-1",
+        "status_code": 403
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "rate_limiting",
+        "priority": "SEV-2",
+        "recommended_owner": "API Operations",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Search: request rate was limited (SEV-2)."
+      },
+      "input": {
+        "affected_api": "Synthetic Search",
+        "detector_signal": null,
+        "error_type": "http_status",
+        "incident_id": "eval-rate-429-a",
+        "latency_ratio": null,
+        "outcome": "unhealthy",
+        "owner_hint": "API Operations",
+        "priority_hint": "SEV-2",
+        "status_code": 429
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "rate_limiting",
+        "priority": "SEV-1",
+        "recommended_owner": "Integration Support",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Billing: request rate was limited (SEV-1)."
+      },
+      "input": {
+        "affected_api": "Synthetic Billing",
+        "detector_signal": "rate_limiting",
+        "error_type": "http_status",
+        "incident_id": "eval-rate-429-b",
+        "latency_ratio": null,
+        "outcome": "unhealthy",
+        "owner_hint": "Integration Support",
+        "priority_hint": "SEV-1",
+        "status_code": 429
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "schema_drift",
+        "priority": "SEV-3",
+        "recommended_owner": "Integration Support",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Catalog: the reviewed response contract changed (SEV-3)."
+      },
+      "input": {
+        "affected_api": "Synthetic Catalog",
+        "detector_signal": null,
+        "error_type": "response_contract",
+        "incident_id": "eval-schema-a",
+        "latency_ratio": null,
+        "outcome": "degraded",
+        "owner_hint": "Integration Support",
+        "priority_hint": "SEV-3",
+        "status_code": 200
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "schema_drift",
+        "priority": "SEV-2",
+        "recommended_owner": "API Operations",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Inventory: the reviewed response contract changed (SEV-2)."
+      },
+      "input": {
+        "affected_api": "Synthetic Inventory",
+        "detector_signal": "schema_drift",
+        "error_type": "response_contract",
+        "incident_id": "eval-schema-b",
+        "latency_ratio": null,
+        "outcome": "degraded",
+        "owner_hint": "API Operations",
+        "priority_hint": "SEV-2",
+        "status_code": 200
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "latency_degradation",
+        "priority": "SEV-3",
+        "recommended_owner": "Integration Support",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Media: latency exceeded the reviewed baseline (SEV-3)."
+      },
+      "input": {
+        "affected_api": "Synthetic Media",
+        "detector_signal": "latency_degradation",
+        "error_type": null,
+        "incident_id": "eval-latency-a",
+        "latency_ratio": 2.3,
+        "outcome": "healthy",
+        "owner_hint": "Integration Support",
+        "priority_hint": "SEV-3",
+        "status_code": 200
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "latency_degradation",
+        "priority": "SEV-2",
+        "recommended_owner": "API Operations",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Weather: latency exceeded the reviewed baseline (SEV-2)."
+      },
+      "input": {
+        "affected_api": "Synthetic Weather",
+        "detector_signal": "latency_degradation",
+        "error_type": null,
+        "incident_id": "eval-latency-b",
+        "latency_ratio": 3.4,
+        "outcome": "healthy",
+        "owner_hint": "API Operations",
+        "priority_hint": "SEV-2",
+        "status_code": 200
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "availability",
+        "priority": "SEV-2",
+        "recommended_owner": "API Operations",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Forecast: availability failed (SEV-2)."
+      },
+      "input": {
+        "affected_api": "Synthetic Forecast",
+        "detector_signal": "availability",
+        "error_type": "timeout",
+        "incident_id": "eval-availability-timeout",
+        "latency_ratio": null,
+        "outcome": "unhealthy",
+        "owner_hint": "API Operations",
+        "priority_hint": "SEV-2",
+        "status_code": null
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "availability",
+        "priority": "SEV-3",
+        "recommended_owner": "Integration Support",
+        "review_state": "auto_classified",
+        "summary": "Synthetic Archive: availability failed (SEV-3)."
+      },
+      "input": {
+        "affected_api": "Synthetic Archive",
+        "detector_signal": "availability",
+        "error_type": "dns",
+        "incident_id": "eval-availability-dns",
+        "latency_ratio": null,
+        "outcome": "unhealthy",
+        "owner_hint": "Integration Support",
+        "priority_hint": "SEV-3",
+        "status_code": null
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "availability",
+        "priority": "SEV-3",
+        "recommended_owner": "API Operations",
+        "review_state": "human_review_required",
+        "summary": "Synthetic Generic: availability failed (SEV-3)."
+      },
+      "input": {
+        "affected_api": "Synthetic Generic",
+        "detector_signal": null,
+        "error_type": "unknown_transport",
+        "incident_id": "eval-low-confidence",
+        "latency_ratio": null,
+        "outcome": "unhealthy",
+        "owner_hint": "API Operations",
+        "priority_hint": "SEV-3",
+        "status_code": null
+      }
+    },
+    {
+      "expected": {
+        "failure_category": "unknown",
+        "priority": "UNASSESSED",
+        "recommended_owner": "Human triage",
+        "review_state": "human_review_required",
+        "summary": "Synthetic Ambiguous: failure signal needs human classification (UNASSESSED)."
+      },
+      "input": {
+        "affected_api": "Synthetic Ambiguous",
+        "detector_signal": null,
+        "error_type": null,
+        "incident_id": "eval-abstention",
+        "latency_ratio": null,
+        "outcome": "degraded",
+        "owner_hint": null,
+        "priority_hint": "UNASSESSED",
+        "status_code": 200
+      }
+    }
+  ],
+  "data_classification": "Committed synthetic labels only; no customer, employer, credential, or private operational data.",
+  "schema_version": 1
+}
