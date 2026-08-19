@@ -64,3 +64,22 @@ The incident engine consumes Day 2 `HealthCheckResult` records without changing 
 | `consecutive_failure_count` | integer | Maximum uninterrupted observations for the failure type |
 
 Incident ordering, evidence ordering, IDs, JSON keys, CSV columns, and summaries are deterministic. Healthy observations are retained only when they close an active incident; this keeps recovery auditable without creating healthy incidents.
+
+## Day 4 extension
+
+Day 4 consumes, but does not alter, the Day 3 incident schema. Each separate classification record contains:
+
+| Field | Type | Meaning |
+|---|---|---|
+| `incident_id` | string | Foreign key to the Day 3 incident |
+| `failure_category` | enum | Five operational categories or `unknown` |
+| `priority` | enum | `SEV-1`, `SEV-2`, `SEV-3`, or `UNASSESSED` |
+| `summary` | string | Concise proposed handoff summary |
+| `recommended_owner` | string | Reviewed owner or `Human triage` |
+| `confidence` | number | Candidate confidence from 0 to 1 |
+| `review_state` | enum | `auto_classified` or `human_review_required` |
+| `abstention_reason` | string/null | Transparent review triggers |
+| `prompt_metadata` | object | Provider/model and version/hash provenance, with external-call flag |
+| `modeled_usage` | object | Deterministic token estimate and explicitly modeled USD cost |
+
+Evaluation fixtures are labeled synthetic inputs. The report fixes class order, threshold order, JSON ordering, rounding, and cost precision. Wall-clock latency is committed only as a coarse bucket, avoiding unstable raw timing values while preserving the measurement basis.
