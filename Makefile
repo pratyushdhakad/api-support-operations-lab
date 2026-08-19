@@ -1,4 +1,4 @@
-.PHONY: run test pipeline registry monitor incidents evaluate
+.PHONY: run test pipeline registry monitor incidents evaluate dashboard
 
 registry:
 	PYTHONPATH=src python3 -m api_support_operations.pipeline
@@ -12,7 +12,10 @@ incidents: monitor
 evaluate: incidents
 	PYTHONPATH=src python3 -m api_support_operations.evaluation_pipeline
 
-run: registry evaluate
+dashboard: evaluate
+	PYTHONPATH=src python3 -m api_support_operations.dashboard
+
+run: registry dashboard
 
 test:
 	PYTHONPATH=src python3 -m unittest discover -s tests -v

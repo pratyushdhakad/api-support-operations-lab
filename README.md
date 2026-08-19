@@ -2,6 +2,11 @@
 
 An AI-automation portfolio project that turns a public API catalog into a monitored service registry, operational incidents, and a decision-ready support dashboard.
 
+[![Quality checks](https://github.com/pratyushdhakad/api-support-operations-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/pratyushdhakad/api-support-operations-lab/actions/workflows/ci.yml)
+[![GitHub Pages](https://github.com/pratyushdhakad/api-support-operations-lab/actions/workflows/pages.yml/badge.svg)](https://github.com/pratyushdhakad/api-support-operations-lab/actions/workflows/pages.yml)
+
+**[Open the executive dashboard →](https://pratyushdhakad.github.io/api-support-operations-lab/)**
+
 > The project uses public metadata from the community-maintained [public-apis catalog](https://github.com/public-apis/public-apis). Committed catalog and health-check fixtures demonstrate the engineering workflow; they are not live availability claims.
 
 ## Business question
@@ -10,7 +15,7 @@ Which external APIs are suitable for monitored workflows, and how should an oper
 
 The eventual decision owner is an automation or data-platform lead responsible for choosing dependencies and responding when an upstream service becomes unreliable.
 
-## Day 4 build status
+## Five-day build status
 
 The repository currently:
 
@@ -29,7 +34,10 @@ The repository currently:
 - classifies failure category, priority, summary, owner, confidence, and review state;
 - evaluates accuracy, macro F1, per-class behavior, threshold coverage, abstention, and latency;
 - records prompt/version provenance and explicitly modeled token/cost usage; and
-- tests parsing, policy enforcement, failure isolation, incident scenarios, AI review behavior, and byte-for-byte reproducibility.
+- generates a responsive executive dashboard from the committed evidence;
+- checks the full pipeline and generated-output drift in GitHub Actions;
+- deploys the static decision experience through GitHub Pages; and
+- tests parsing, policy enforcement, failure isolation, incident scenarios, AI review behavior, dashboard reconciliation, and byte-for-byte reproducibility.
 
 Tests, `make run`, and committed artifacts never call external endpoints. The live mode is opt-in and makes at most one request to each of three reviewed targets.
 
@@ -58,6 +66,8 @@ Generated outputs are written to `artifacts/`:
 - `incident_classifications.json` — Day 4 classifications, review states, metadata, and per-record modeled usage;
 - `classification_evaluation.json` — labeled-fixture metrics, threshold analysis, per-class performance, and latency buckets; and
 - `classification_cost_summary.json` — illustrative modeled pricing and aggregate usage, never realized spend or savings.
+
+The generated dashboard contract is written to `site/data/dashboard.json`.
 
 Run the complete deterministic pipeline with:
 
@@ -90,6 +100,8 @@ flowchart LR
     I --> J[Auditable severity and recovery timeline]
     J --> K[Provider-agnostic classifier]
     K --> L[Evaluation, abstention, and modeled cost evidence]
+    L --> M[Executive dashboard and decision queue]
+    M --> N[CI-gated GitHub Pages deployment]
 ```
 
 ## Five-day roadmap
@@ -98,17 +110,19 @@ flowchart LR
 2. **Health monitoring:** latency history, failure handling, controlled endpoint probes — complete
 3. **Incident operations:** incident model, severity rules, automated tests — complete
 4. **AI evaluation:** failure classification, evaluation harness, cost tracking — complete
-5. **Decision experience:** executive dashboard, CI, GitHub Pages deployment
+5. **Decision experience:** executive dashboard, CI, GitHub Pages deployment — complete
 
 ## Repository map
 
 ```text
-src/api_support_operations/  catalog, monitoring, incident, classification, evaluation, and artifact pipelines
+src/api_support_operations/  catalog, monitoring, incident, classification, evaluation, dashboard, and artifact pipelines
 config/                      reviewed monitoring, incident, confidence, ownership, and modeled-pricing policies
 data/                        attributed catalog plus deterministic operational and labeled evaluation fixtures
-tests/                       policy, resilience, incident, classifier, metric, parser, and reproducibility tests
+tests/                       policy, resilience, incident, classifier, metric, dashboard, parser, and reproducibility tests
 artifacts/                   generated registry, monitoring, incident, classification, and evaluation outputs
-docs/                        data contracts, operating assumptions, review policy, and failure modes
+site/                        responsive dashboard, generated data contract, and social preview
+docs/                        data contracts, architecture, interview walkthrough, review policy, and failure modes
+.github/workflows/           continuous integration and GitHub Pages deployment
 ```
 
 ## Responsible-use guardrails
@@ -135,6 +149,8 @@ docs/                        data contracts, operating assumptions, review polic
 - CORS is retained as metadata but does not determine server-side monitoring eligibility.
 
 See [AI-assisted classification and evaluation](docs/ai-evaluation.md) for metric definitions, threshold tradeoffs, failure modes, human review, prompt metadata, and modeled-cost assumptions.
+
+See [Day 5 decision experience](docs/day-5-decision-experience.md) for architecture, delivery controls, responsible-use boundaries, and a five-minute interview walkthrough.
 
 ## License
 
