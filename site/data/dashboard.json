@@ -1,0 +1,265 @@
+{
+  "ai_evaluation": {
+    "accuracy_on_answered_percent": 100.0,
+    "auto_classified_count": 10,
+    "coverage_percent": 90.91,
+    "fixture_case_count": 12,
+    "human_review_count": 2,
+    "macro_f1": 0.96,
+    "modeled_cost_usd": "0.00029115",
+    "operating_threshold": 0.85,
+    "provider": "deterministic-baseline",
+    "realized_cost_or_savings_claimed": false
+  },
+  "incidents": {
+    "failure_type_counts": {
+      "authentication_failure": 1,
+      "availability": 1,
+      "latency_degradation": 2,
+      "rate_limiting": 1,
+      "schema_drift": 1
+    },
+    "open_count": 0,
+    "resolved_count": 6,
+    "rows": [
+      {
+        "confidence": 0.99,
+        "failure_category": "rate_limiting",
+        "first_observed_at": "2026-08-17T13:00:00Z",
+        "incident_id": "inc-138016fb6d5e",
+        "lifecycle_state": "resolved",
+        "owner": "API Operations",
+        "priority": "SEV-1",
+        "review_state": "auto_classified",
+        "service": "NHTSA vPIC",
+        "summary": "NHTSA vPIC: request rate was limited (SEV-1)."
+      },
+      {
+        "confidence": 0.95,
+        "failure_category": "availability",
+        "first_observed_at": "2026-08-17T13:00:00Z",
+        "incident_id": "inc-47d92a9f4661",
+        "lifecycle_state": "resolved",
+        "owner": "API Operations",
+        "priority": "SEV-1",
+        "review_state": "auto_classified",
+        "service": "Open-Meteo",
+        "summary": "Open-Meteo: availability failed (SEV-1)."
+      },
+      {
+        "confidence": 0.99,
+        "failure_category": "authentication_failure",
+        "first_observed_at": "2026-08-17T15:00:00Z",
+        "incident_id": "inc-e9b091b27b28",
+        "lifecycle_state": "resolved",
+        "owner": "API Operations",
+        "priority": "SEV-1",
+        "review_state": "auto_classified",
+        "service": "NHTSA vPIC",
+        "summary": "NHTSA vPIC: authentication failed (SEV-1)."
+      },
+      {
+        "confidence": 0.91,
+        "failure_category": "latency_degradation",
+        "first_observed_at": "2026-08-17T17:00:00Z",
+        "incident_id": "inc-90ddadc5e2a3",
+        "lifecycle_state": "resolved",
+        "owner": "Integration Support",
+        "priority": "SEV-2",
+        "review_state": "auto_classified",
+        "service": "Art Institute of Chicago",
+        "summary": "Art Institute of Chicago: latency exceeded the reviewed baseline (SEV-2)."
+      },
+      {
+        "confidence": 0.98,
+        "failure_category": "schema_drift",
+        "first_observed_at": "2026-08-17T13:00:00Z",
+        "incident_id": "inc-bb98d361bb2a",
+        "lifecycle_state": "resolved",
+        "owner": "Integration Support",
+        "priority": "SEV-3",
+        "review_state": "auto_classified",
+        "service": "Art Institute of Chicago",
+        "summary": "Art Institute of Chicago: the reviewed response contract changed (SEV-3)."
+      },
+      {
+        "confidence": 0.91,
+        "failure_category": "latency_degradation",
+        "first_observed_at": "2026-08-17T15:00:00Z",
+        "incident_id": "inc-bf6c203a3aa0",
+        "lifecycle_state": "resolved",
+        "owner": "Integration Support",
+        "priority": "SEV-3",
+        "review_state": "auto_classified",
+        "service": "Art Institute of Chicago",
+        "summary": "Art Institute of Chicago: latency exceeded the reviewed baseline (SEV-3)."
+      }
+    ],
+    "severity_counts": {
+      "SEV-1": 3,
+      "SEV-2": 1,
+      "SEV-3": 2
+    },
+    "total_count": 6
+  },
+  "monitoring": {
+    "check_count": 21,
+    "degraded_count": 1,
+    "healthy_count": 14,
+    "healthy_percent": 66.7,
+    "run_count": 7,
+    "services": [
+      {
+        "api_id": "art-design-art-institute-of-chicago",
+        "average_latency_ms": 161.9,
+        "latest_latency_ms": 108,
+        "latest_outcome": "healthy",
+        "name": "Art Institute of Chicago",
+        "samples": [
+          {
+            "latency_ms": 100,
+            "observed_at": "2026-08-17T12:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 140,
+            "observed_at": "2026-08-17T13:00:00Z",
+            "outcome": "degraded"
+          },
+          {
+            "latency_ms": 105,
+            "observed_at": "2026-08-17T14:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 250,
+            "observed_at": "2026-08-17T15:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 110,
+            "observed_at": "2026-08-17T16:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 320,
+            "observed_at": "2026-08-17T17:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 108,
+            "observed_at": "2026-08-17T18:00:00Z",
+            "outcome": "healthy"
+          }
+        ]
+      },
+      {
+        "api_id": "vehicle-nhtsa",
+        "average_latency_ms": 209.7,
+        "latest_latency_ms": 198,
+        "latest_outcome": "healthy",
+        "name": "NHTSA",
+        "samples": [
+          {
+            "latency_ms": 200,
+            "observed_at": "2026-08-17T12:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 240,
+            "observed_at": "2026-08-17T13:00:00Z",
+            "outcome": "unhealthy"
+          },
+          {
+            "latency_ms": 205,
+            "observed_at": "2026-08-17T14:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 210,
+            "observed_at": "2026-08-17T15:00:00Z",
+            "outcome": "unhealthy"
+          },
+          {
+            "latency_ms": 215,
+            "observed_at": "2026-08-17T16:00:00Z",
+            "outcome": "unhealthy"
+          },
+          {
+            "latency_ms": 200,
+            "observed_at": "2026-08-17T17:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 198,
+            "observed_at": "2026-08-17T18:00:00Z",
+            "outcome": "healthy"
+          }
+        ]
+      },
+      {
+        "api_id": "weather-open-meteo",
+        "average_latency_ms": 1338.1,
+        "latest_latency_ms": 90,
+        "latest_outcome": "healthy",
+        "name": "Open-Meteo",
+        "samples": [
+          {
+            "latency_ms": 90,
+            "observed_at": "2026-08-17T12:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 3000,
+            "observed_at": "2026-08-17T13:00:00Z",
+            "outcome": "unhealthy"
+          },
+          {
+            "latency_ms": 3000,
+            "observed_at": "2026-08-17T14:00:00Z",
+            "outcome": "unhealthy"
+          },
+          {
+            "latency_ms": 3000,
+            "observed_at": "2026-08-17T15:00:00Z",
+            "outcome": "unhealthy"
+          },
+          {
+            "latency_ms": 95,
+            "observed_at": "2026-08-17T16:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 92,
+            "observed_at": "2026-08-17T17:00:00Z",
+            "outcome": "healthy"
+          },
+          {
+            "latency_ms": 90,
+            "observed_at": "2026-08-17T18:00:00Z",
+            "outcome": "healthy"
+          }
+        ]
+      }
+    ],
+    "target_count": 3,
+    "unhealthy_count": 6
+  },
+  "provenance": {
+    "as_of": "2026-08-17T18:00:00Z",
+    "data_classification": "Synthetic portfolio fixtures",
+    "external_api_called": false,
+    "source": "public-apis excerpt plus deterministic operational fixtures"
+  },
+  "registry": {
+    "api_count": 12,
+    "category_counts": {
+      "Art & Design": 2,
+      "Transportation": 4,
+      "Vehicle": 2,
+      "Weather": 4
+    },
+    "eligible_count": 10,
+    "eligible_percent": 83.3
+  }
+}
