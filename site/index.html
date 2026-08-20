@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101913">
+    <meta name="description" content="A decision-ready view of API registry coverage, service health, incident severity, AI review quality, and modeled operating cost.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Upstream Control Room">
+    <meta property="og:description" content="API reliability operations from registry to reviewed incident decision.">
+    <meta property="og:url" content="https://pratyushdhakad.github.io/api-support-operations-lab/">
+    <meta property="og:image" content="https://pratyushdhakad.github.io/api-support-operations-lab/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Upstream Control Room">
+    <meta name="twitter:description" content="API reliability operations from registry to reviewed incident decision.">
+    <meta name="twitter:image" content="https://pratyushdhakad.github.io/api-support-operations-lab/og.png">
+    <title>Upstream Control Room · API Support Operations Lab</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to dashboard</a>
+
+    <header class="topbar">
+      <a class="brand" href="#main" aria-label="Upstream Control Room home">
+        <span class="brand-mark" aria-hidden="true">UC</span>
+        <span>
+          <strong>Upstream Control Room</strong>
+          <small>API Support Operations Lab</small>
+        </span>
+      </a>
+      <nav aria-label="Dashboard sections">
+        <a href="#health">Health</a>
+        <a href="#incidents">Incidents</a>
+        <a href="#ai-review">AI review</a>
+      </nav>
+      <a class="repo-link" href="https://github.com/pratyushdhakad/api-support-operations-lab">View source <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse" aria-hidden="true"></span> Executive operations brief</div>
+          <h1 id="hero-title">Know what broke.<br><em>Know what to do next.</em></h1>
+          <p class="lede">A five-day reliability system that turns public API metadata into controlled monitoring, auditable incidents, reviewable AI decisions, and an executive-ready operating view.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#incidents">Review decision queue</a>
+            <a class="text-action" href="https://github.com/pratyushdhakad/api-support-operations-lab/blob/main/docs/day-5-decision-experience.md">Read the architecture <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <aside class="brief-card" aria-label="Current operating brief">
+          <div class="brief-heading">
+            <span>Current brief</span>
+            <span class="status-chip">All fixture incidents resolved</span>
+          </div>
+          <dl class="brief-grid">
+            <div><dt>Registry</dt><dd><span id="brief-registry">—</span> APIs</dd></div>
+            <div><dt>Monitored</dt><dd><span id="brief-targets">—</span> services</dd></div>
+            <div><dt>Incidents</dt><dd><span id="brief-incidents">—</span> reviewed</dd></div>
+            <div><dt>Open now</dt><dd><span id="brief-open">—</span></dd></div>
+          </dl>
+          <div class="brief-note">
+            <span>Data as of</span>
+            <strong id="as-of">Loading deterministic artifacts…</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="metric-strip" aria-label="Executive key performance indicators">
+        <article>
+          <span class="metric-label">Monitoring ready</span>
+          <strong><span id="eligible-percent">—</span><small>%</small></strong>
+          <span id="eligible-detail" class="metric-detail">—</span>
+        </article>
+        <article>
+          <span class="metric-label">Healthy observations</span>
+          <strong><span id="healthy-percent">—</span><small>%</small></strong>
+          <span id="healthy-detail" class="metric-detail">—</span>
+        </article>
+        <article>
+          <span class="metric-label">AI coverage</span>
+          <strong><span id="coverage-percent">—</span><small>%</small></strong>
+          <span id="coverage-detail" class="metric-detail">at reviewed threshold</span>
+        </article>
+        <article class="cost-metric">
+          <span class="metric-label">Modeled batch cost</span>
+          <strong>$<span id="modeled-cost">—</span></strong>
+          <span class="metric-detail">modeled—not realized</span>
+        </article>
+      </section>
+
+      <section id="health" class="section-block" aria-labelledby="health-title">
+        <div class="section-heading">
+          <div>
+            <span class="section-index">01 / Reliability</span>
+            <h2 id="health-title">Service health, without the hand-waving.</h2>
+          </div>
+          <p>Every value comes from deterministic fixtures. The live probe remains deliberately opt-in and rate-limited.</p>
+        </div>
+
+        <div class="health-grid">
+          <article class="panel coverage-panel">
+            <div class="panel-heading">
+              <div><span class="overline">Catalog coverage</span><h3>Ready for controlled monitoring</h3></div>
+              <strong id="coverage-ratio">—</strong>
+            </div>
+            <div class="coverage-track" role="img" aria-label="Monitoring eligibility coverage">
+              <span id="coverage-fill"></span>
+            </div>
+            <div id="category-list" class="category-list" aria-label="API categories"></div>
+          </article>
+
+          <article class="panel outcome-panel">
+            <div class="panel-heading">
+              <div><span class="overline">Observation mix</span><h3>21 bounded health checks</h3></div>
+              <span class="fixture-badge">Fixture history</span>
+            </div>
+            <div class="outcome-chart" aria-label="Health-check outcomes">
+              <div id="outcome-donut" class="donut" role="img"><span id="donut-center">—</span></div>
+              <dl class="legend">
+                <div><dt><span class="legend-dot healthy"></span>Healthy</dt><dd id="healthy-count">—</dd></div>
+                <div><dt><span class="legend-dot degraded"></span>Degraded</dt><dd id="degraded-count">—</dd></div>
+                <div><dt><span class="legend-dot unhealthy"></span>Unhealthy</dt><dd id="unhealthy-count">—</dd></div>
+              </dl>
+            </div>
+          </article>
+        </div>
+
+        <div id="service-grid" class="service-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="incidents" class="section-block" aria-labelledby="incidents-title">
+        <div class="section-heading incident-heading">
+          <div>
+            <span class="section-index">02 / Incidents</span>
+            <h2 id="incidents-title">Incident decision queue.</h2>
+          </div>
+          <div class="severity-summary" aria-label="Incident severity summary">
+            <span><b id="sev1-count">—</b> SEV-1</span>
+            <span><b id="sev2-count">—</b> SEV-2</span>
+            <span><b id="sev3-count">—</b> SEV-3</span>
+          </div>
+        </div>
+
+        <div class="table-toolbar">
+          <label>Filter priority
+            <select id="severity-filter">
+              <option value="all">All priorities</option>
+              <option value="SEV-1">SEV-1</option>
+              <option value="SEV-2">SEV-2</option>
+              <option value="SEV-3">SEV-3</option>
+            </select>
+          </label>
+          <label>Find service or signal
+            <input id="incident-search" type="search" placeholder="Search incidents">
+          </label>
+          <span id="queue-count" class="queue-count">—</span>
+        </div>
+
+        <div class="table-shell" tabindex="0" aria-label="Scrollable incident table">
+          <table>
+            <thead><tr><th>Priority</th><th>Service / signal</th><th>Owner</th><th>AI confidence</th><th>State</th></tr></thead>
+            <tbody id="incident-rows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="ai-review" class="section-block ai-section" aria-labelledby="ai-title">
+        <div class="section-heading">
+          <div>
+            <span class="section-index">03 / AI review</span>
+            <h2 id="ai-title">Automation with an exit ramp.</h2>
+          </div>
+          <p>The classifier can decline unattended decisions. Confidence, provenance, and modeled usage remain visible for human review.</p>
+        </div>
+
+        <div class="ai-grid">
+          <article class="ai-scorecard">
+            <span class="overline">Operating point</span>
+            <div class="f1-score"><strong id="macro-f1">—</strong><span>macro F1</span></div>
+            <div class="score-rail"><span id="f1-fill"></span></div>
+            <div class="score-grid">
+              <div><strong id="answered-accuracy">—</strong><span>answered-case accuracy</span></div>
+              <div><strong id="review-count">—</strong><span>fixtures routed to review</span></div>
+              <div><strong id="threshold">—</strong><span>confidence threshold</span></div>
+            </div>
+          </article>
+
+          <article class="principles-card">
+            <span class="overline">Decision controls</span>
+            <ol>
+              <li><span>01</span><div><strong>Abstain on ambiguity</strong><p>Unknown, invalid, or low-confidence inputs go to human triage.</p></div></li>
+              <li><span>02</span><div><strong>Keep evidence authoritative</strong><p>Classification supports the operator; it never replaces incident evidence.</p></div></li>
+              <li><span>03</span><div><strong>Price transparently</strong><p>Token and cost fields are illustrative models, never invoices or savings claims.</p></div></li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="method-note" aria-labelledby="method-title">
+        <div><span class="section-index">Method & limits</span><h2 id="method-title">Built to be inspected.</h2></div>
+        <div class="method-copy">
+          <p><strong>Synthetic portfolio fixtures.</strong> This dashboard demonstrates a reproducible operating system, not provider uptime, customer impact, or a production SLA.</p>
+          <p><strong>No hidden model spend.</strong> The committed classifier is an offline structured-rules baseline. No external API was called for these results.</p>
+          <p><strong>Public-data attribution.</strong> Catalog metadata is derived from the community-maintained <a href="https://github.com/public-apis/public-apis">public-apis project</a>; provider documentation remains authoritative.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+        <div><strong>API Support Operations Lab</strong><span>Designed and engineered by Pratyush Dhakad as an AI-automation portfolio system.</span></div>
+      <div class="footer-links"><a href="https://github.com/pratyushdhakad/api-support-operations-lab">Source</a><a href="https://github.com/pratyushdhakad/api-support-operations-lab/blob/main/docs/ai-evaluation.md">Evaluation notes</a><a href="#main">Back to top ↑</a></div>
+    </footer>
+
+    <div id="load-error" class="load-error" role="alert" hidden>Dashboard data could not be loaded. The source repository contains the complete deterministic artifacts.</div>
+  </body>
+</html>
